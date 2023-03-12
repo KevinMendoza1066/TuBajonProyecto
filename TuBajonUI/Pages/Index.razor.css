@@ -1,0 +1,43 @@
+
+* {
+    font-family: 'Tilt Neon', cursive;
+    /*font-family: 'Secular One', sans-serif;*/
+}
+
+#ImageLogin {
+    background: url("images/Animated.svg");
+    background-size: cover;
+    border-radius: 15px 0px 0px 15px;
+    color: #fef3cb
+}
+
+    #ImageLogin h1 {
+        color: #f6f6f6
+    }
+
+    #ImageLogin h4 {
+        margin-bottom: auto;
+    }
+
+#FormLogin {
+    border-radius: 0px 15px 15px 0px;
+}
+.Field {
+    top:auto;
+    bottom:auto;
+}
+
+@media only screen and (max-width:990px) {
+    #ImageLogin {
+        display: none;
+    }
+
+    .container-fluid {
+        background: url("images/Animated.svg") !important;
+    }
+
+    #FormLogin {
+        border-radius: 15px 15px 15px 15px;
+        background: #ffffff89;
+    }
+}

@@ -1,0 +1,43 @@
+
+*[b-fj2bjtyii4] {
+    font-family: 'Tilt Neon', cursive;
+    /*font-family: 'Secular One', sans-serif;*/
+}
+
+#ImageLogin[b-fj2bjtyii4] {
+    background: url("images/Animated.svg");
+    background-size: cover;
+    border-radius: 15px 0px 0px 15px;
+    color: #fef3cb
+}
+
+    #ImageLogin h1[b-fj2bjtyii4] {
+        color: #f6f6f6
+    }
+
+    #ImageLogin h4[b-fj2bjtyii4] {
+        margin-bottom: auto;
+    }
+
+#FormLogin[b-fj2bjtyii4] {
+    border-radius: 0px 15px 15px 0px;
+}
+.Field[b-fj2bjtyii4] {
+    top:auto;
+    bottom:auto;
+}
+
+@media only screen and (max-width:990px) {
+    #ImageLogin[b-fj2bjtyii4] {
+        display: none;
+    }
+
+    .container-fluid[b-fj2bjtyii4] {
+        background: url("images/Animated.svg") !important;
+    }
+
+    #FormLogin[b-fj2bjtyii4] {
+        border-radius: 15px 15px 15px 15px;
+        background: #ffffff89;
+    }
+}

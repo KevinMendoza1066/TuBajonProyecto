@@ -1,0 +1,102 @@
+﻿
+@page "/Registro"
+@using Radzen
+@using Radzen.Blazor
+@using Models
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+<div class="container-fluid">
+    <div class="row vh-100 p-5 justify-content-center">
+        <div id="ImageLogin" class="col-sm-12 col-md-8 col-lg-4 p-5 text-center">
+            <h1>Tu Bajon <strong style="color:white">SV</strong></h1>
+            <img class="m-4" src="images/registro.svg" width="200" height="200" alt="" srcset="">
+            <h4 class="m-4 text-black">Registrate</h4>
+        </div>
+        <div id="FormLogin" class="col-sm-12 col-md-8 col-lg-4  shadow ">
+            <RadzenTemplateForm TItem="RegistroModel" Data=@Registrar Submit=@OnSubmit InvalidSubmit=@OnInvalidSubmit class="h-100 ">
+                <RadzenFieldset Text="Registro Tu Bajon" class="Field">
+
+                    <div class="row mb-5">
+                        <div class="col-md-4 ">
+                            <RadzenLabel Text="Usuario" />
+                            <!--<small style="display: block">(5 digit ZIP code)</small>>-->
+                        </div>
+                        <div class="col">
+                            <RadzenTextBox style="display: block" Name="Usuario" @bind-Value=@Registrar.Nombre class="w-100" />
+                            <RadzenRequiredValidator Component="Usuario" Text="Campo es requerido" Popup=@popup Style="position: absolute" />
+                            <!--<RadzenRegexValidator Component="ZIP" Text="ZIP code must be 5 digits" Pattern="\d{5}" Popup=@popup Style="position: absolute" />-->
+                        </div>
+                    </div>
+                    <div class="row mb-5">
+                        <div class="col-md-4 ">
+                            <RadzenLabel Text="Contraseña" />
+                            <!--<small style="display: block">(5 digit ZIP code)</small>>-->
+                        </div>
+                        <div class="col">
+                            <RadzenPassword style="display: block" Name="Contrasenia" @bind-Value=@Registrar.Contrasenia class="w-100" />
+                            <RadzenRequiredValidator Component="Contrasenia" Text="Campo es requerido" Popup=@popup Style="position: absolute" />
+                            <!--<RadzenRegexValidator Component="ZIP" Text="ZIP code must be 5 digits" Pattern="\d{5}" Popup=@popup Style="position: absolute" />-->
+                        </div>
+
+                    </div>
+                    <div class="row mb-5">
+                        <div class="col-md-4 ">
+                            <RadzenLabel Text="Repetir Contraseña" />
+                            <!--<small style="display: block">(5 digit ZIP code)</small>>-->
+                        </div>
+                        <div class="col">
+                            <RadzenPassword style="display: block" Name="RepContrasenia" @bind-Value=@Registrar.RepContrasenia class="w-100" />
+                            <RadzenRequiredValidator Component="RepContrasenia" Text="Campo es requerido" Popup=@popup Style="position: absolute" />
+                            <RadzenCompareValidator Visible=@(!string.IsNullOrEmpty(Registrar.RepContrasenia)) Value=@Registrar.Contrasenia Component="RepContrasenia" Text="Contraseñas deben ser iguales" Popup=@popup Style="position: absolute" />
+                        </div>
+
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-4 ">
+                            <RadzenLabel Text="Correo Electrónico" />
+                            <!--<small style="display: block">(5 digit ZIP code)</small>>-->
+                        </div>
+                        <div class="col">
+                            <RadzenTextBox style="display: block" Name="Correo" @bind-Value=@Registrar.Correo class="w-100" />
+                            <RadzenRequiredValidator Component="Correo" Text="Campo es requerido" Popup=@popup Style="position: absolute" />
+                            <RadzenEmailValidator Popup=@popup Component="Correo" Text="Ingrese un email valido " />
+                            <!--<RadzenRegexValidator Component="ZIP" Text="ZIP code must be 5 digits" Pattern="\d{5}" Popup=@popup Style="position: absolute" />-->
+                        </div>
+                    </div>
+                    <!--<div class="rz-p-12 rz-text-align-center">-->
+                    <div class="">
+                        <RadzenLink Path="/" Text="Ya tienes cuenta? Ingresa desde acá" />
+                    </div>
+
+                    <RadzenButton ButtonType="ButtonType.Submit" Text="Ingresar" class="rz-danger"></RadzenButton>
+                </RadzenFieldset>
+                    </RadzenTemplateForm>
+                </div>
+            </div>
+        </div>
+
+
+
+        @code {
+            bool popup = true;
+
+            RegistroModel Registrar = new RegistroModel();
+
+
+            void Log(string eventName, string value)
+            {
+
+            }
+
+            void OnSubmit(RegistroModel Ingreso)
+            {
+
+            }
+
+            void OnInvalidSubmit(FormInvalidSubmitEventArgs args)
+            {
+
+            }
+        }
